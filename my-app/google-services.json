@@ -1,0 +1,39 @@
+{
+	"project_info": {
+		"project_number": "844848901840",
+		"project_id": "test-project-firebase28",
+		"storage_bucket": "test-project-firebase28.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:844848901840:android:96a33e20d9859e253af8d5",
+				"android_client_info": {
+					"package_name": "com.starbucks.myapp"
+				}
+			},
+			"oauth_client": [
+				{
+					"client_id": "844848901840-6pc61610ojteoq0uc2ssoccftcddgoqp.apps.googleusercontent.com",
+					"client_type": 3
+				}
+			],
+			"api_key": [
+				{
+					"current_key": "AIzaSyBHFSJ4w_CgXwvjlJhanEZNqzBqwmrGRiE"
+				}
+			],
+			"services": {
+				"appinvite_service": {
+					"other_platform_oauth_client": [
+						{
+							"client_id": "844848901840-6pc61610ojteoq0uc2ssoccftcddgoqp.apps.googleusercontent.com",
+							"client_type": 3
+						}
+					]
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-import { Alert } from "react-native";
+import { Alert, Text, StyleSheet, View } from "react-native";
 import { getAuth } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { setDoc, doc, onSnapshot } from "firebase/firestore";
@@ -8,6 +8,8 @@ import FormItem from "../components/controls/FormItem";
 import { Content, Header, Wrapper } from "../components/layout";
 
 import { db, app } from "../firebase-config";
+
+import { TailwindProvider } from "nativewind";
 
 export default function Profile() {
   const [loading, setLoading] = useState(false);
@@ -57,8 +59,13 @@ export default function Profile() {
 
   return (
     <Wrapper>
-      <Header title="Perfil" showBack={true} showCart={false} />
+      <Header
+        title={`Hola ${data.full_name}`}
+        showBack={true}
+        showCart={false}
+      />
       <Content>
+        <Text style={styles.title}>Información personal</Text>
         <FormItem
           value={data.full_name}
           label="Nombre completo"
@@ -78,8 +85,45 @@ export default function Profile() {
           keyboardType="number-pad"
           onChange={(value) => setData((prev) => ({ ...prev, age: value }))}
         ></FormItem>
-        <Button onPress={updateUser} label={"ACTUALIZAR"} isLoading={loading} />
+        <Text style={styles.title}>Datos Bancarios</Text>
+        <FormItem value={""} label="Cuenta"></FormItem>
+        <View style={styles.container}>
+          <FormItem
+            value={""}
+            label="Fecha de vencimiento"
+            isInFlex={true}
+          ></FormItem>
+          <FormItem value={""} label="CVV" isInFlex={true}></FormItem>
+        </View>
+        <View style={styles.container}>
+          <Button
+            onPress={updateUser}
+            label={"Actualizar"}
+            isLoading={loading}
+          />
+          <Button
+            onPress={""}
+            label={"Cancelar"}
+            isLoading={loading}
+            isPrimary={false}
+          />
+        </View>
       </Content>
     </Wrapper>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 5,
+  },
+  title: {
+    fontSize: 20,
+    marginBottom: 10,
+  },
+});

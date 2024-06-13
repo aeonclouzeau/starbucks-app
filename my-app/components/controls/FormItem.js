@@ -9,9 +9,10 @@ export default function FormItem({
   keyboardType = "default",
   secure = false,
   value = "",
+  isInFlex = false,
 }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isInFlex && styles.flexFormItem]}>
       {label && <Text style={styles.label}>{label}</Text>}
       <TextInput
         onChangeText={onChange}
@@ -36,11 +37,15 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   input: {
-    borderBottomColor: Colors.cinnabar,
-    borderBottomWidth: 2,
+    borderWidth: 1,
+    borderRadius: 5,
     color: Colors.jet,
     fontSize: Fonts.size.normal,
     paddingBottom: 5,
     paddingTop: 5,
+    paddingLeft: 10,
+  },
+  flexFormItem: {
+    width: "50%",
   },
 });

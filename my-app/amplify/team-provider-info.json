@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-starbucks-dev-5ce46-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264507703:role/amplify-starbucks-dev-5ce46-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264507703:role/amplify-starbucks-dev-5ce46-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-starbucks-dev-5ce46-deployment",
+      "UnauthRoleName": "amplify-starbucks-dev-5ce46-unauthRole",
+      "StackName": "amplify-starbucks-dev-5ce46",
+      "StackId": "arn:aws:cloudformation:us-east-2:058264507703:stack/amplify-starbucks-dev-5ce46/257b9ab0-2e9f-11ef-ad07-0663d4fa311d",
+      "AmplifyAppId": "d1rxadssykwoy4"
+    },
+    "categories": {
+      "auth": {
+        "starbuckse02b7d0a": {}
+      }
+    }
+  }
+}

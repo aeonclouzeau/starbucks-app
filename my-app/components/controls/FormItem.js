@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   input: {
+    backgroundColor: colors.white,
     borderWidth: 1,
     borderRadius: 5,
     color: Colors.jet,

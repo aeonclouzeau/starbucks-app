@@ -9,7 +9,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
 import Navigation from "./navigation";
 import { createContext, useState, useContext } from "react";
-import { TailwindProvider } from "nativewind";
+import Amplify from "aws-amplify";
+import config from "./src/aws-exports";
+import { withAuthenticator } from "aws-amplify-react-native";
+
+Amplify.configure(config);
 
 export const AppStateContext = createContext({
   cartItems: [],
@@ -18,7 +22,7 @@ export const AppStateContext = createContext({
 
 export const useAppState = () => useContext(AppStateContext);
 
-export default function App() {
+const App = () => {
   const [fontLoaded, fontError] = useFonts({
     Montserrat_300Light,
     Montserrat_400Regular,
@@ -39,4 +43,6 @@ export default function App() {
       </AppStateContext.Provider>
     </SafeAreaProvider>
   );
-}
+};
+
+export default withAuthenticator(App);
